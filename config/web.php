@@ -15,10 +15,4 @@ return [
 		'name'	    => 'Silvia (Basil Virtual Assistant)',
 		'email'	    => 'silvia@basil.id',
 	],
-	'setting'		=> [
-		// 'wh_usage_cutoff'	=> 'daily',	
-		// 'sale_flow'			=> 'mrp',	
-		'wh_usage_cutoff'	=> 'transaction',	
-		'sale_flow'			=> 'erp',	
-	],
 ];

@@ -10,7 +10,7 @@ use Lacunose\Subscribe\Models\Plan;
 use Laravel\Passport\HasApiTokens;
 
 class User extends Model {
-	use HasApiTokens;
+    use HasApiTokens;
 
     protected $appends  = [];
 
@@ -18,6 +18,12 @@ class User extends Model {
      * relationship has many chats
      */
     public function subs() {
-        return $this->setConnection(config()->get('web.db.tacl'))->hasMany(Plan::class)->orderby('ended_at', 'asc');
+        return $this->setConnection(config()->get('web.db.tsub'))->hasMany(Plan::class, 'email', 'email')->orderby('ended_at', 'asc');
+    }
+
+    protected function scopefindForPassport($q, $val) {
+        return $q->where(function($q) use($val) {
+            $q->where('email', $val)->orwhere('phone', $val);
+        })->first();
     }
 }

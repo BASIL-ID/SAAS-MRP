@@ -40,7 +40,7 @@ return [
 				'scope'	=> 'tsale.transaction.blibli',
 			]],
 			'Pengaturan' => [[
-				'title'	=> 'Produk',
+				'title'	=> 'Katalog',
 				'url'	=> 'tsale.catalog.index',
 				'param' => ['status' => 'published'],
 				'scope'	=> 'tsale.catalog.setting',
@@ -54,12 +54,6 @@ return [
 				'url'	=> 'tsale.promo.index',
 				'param' => ['mode' => 'transaction', 'status' => 'activated'],
 				'scope'	=> 'tsale.promo.transaction',
-			]],
-			'Outlet' => [[
-				'title'	=> 'Katalog',
-				'url'	=> 'tsale.catalog.listing',
-				'param' => [],
-				'scope'	=> 'tsale.catalog.listing',
 			], [
 				'title'	=> 'Template Note',
 				'url'	=> 'tsale.note.get',
@@ -70,6 +64,27 @@ return [
 				'url'	=> 'tsale.pay.get',
 				'param' => [],
 				'scope'	=> 'tsale.setting.pay',
+			]],
+			'Outlet' => [[
+				'title'	=> 'Katalog',
+				'url'	=> 'tsale.catalog.listing',
+				'param' => [],
+				'scope'	=> 'tsale.catalog.listing',
+			],[
+				'title'	=> 'Promo',
+				'url'	=> 'tsale.promo.listing',
+				'param' => [],
+				'scope'	=> 'tsale.promo.listing',
+			],[
+				'title'	=> 'Menu',
+				'url'	=> 'tsale.menu.index',
+				'param' => ['status' => 'published'],
+				'scope'	=> 'tsale.menu.setting',
+			], [
+				'title'	=> 'Checker',
+				'url'	=> 'tsale.transaction.checker',
+				'param' => ['status' => 'requested'],
+				'scope'	=> 'tsale.transaction.checker',
 			]],
 			'Laporan' => [[
 				'title'	=> 'Trend Produk',
@@ -82,14 +97,59 @@ return [
 				'param' => ['group' => 'customer', 'filter[date_gte]' => date('Y-m-d')],
 				'scope'	=> 'tsale.laporan.customer',
 			], [
+				'title'	=> 'Preferensi Produk',
+				'url'	=> 'tsale.laporan.index',
+				'param' => ['group' => 'palate', 'filter[date_gte]' => date('Y-m-d')],
+				'scope'	=> 'tsale.laporan.palate',
+			], [
+				'title'	=> 'Performance Station',
+				'url'	=> 'tsale.laporan.index',
+				'param' => ['group' => 'station', 'filter[date_gte]' => date('Y-m-d')],
+				'scope'	=> 'tsale.laporan.station',
+			], [
+				'title'	=> 'Rasio Menu',
+				'url'	=> 'tsale.laporan.index',
+				'param' => ['group' => 'ratio', 'filter[date_gte]' => date('Y-m-d')],
+				'scope'	=> 'tsale.laporan.ratio',
+			], [
 				'title'	=> 'Settlement Penjualan',
 				'url'	=> 'tsale.laporan.index',
 				'param' => ['group' => 'payment', 'filter[date_gte]' => date('Y-m-d')],
 				'scope'	=> 'tsale.laporan.payment',
 			]],
 		],
-		'GUDANG'	=> [
-			'Stok' 	=> [[
+		'PELANGGAN'		=> [
+			'Data' 		=> [[
+				'title'	=> 'Akun',
+				'url'	=> 'tcust.account.index',
+				'param' => ['status' => 'opened'],
+				'scope'	=> 'tcust.account.data',
+			]],
+			'Pengaturan' => [[
+				'title'	=> 'Anggota',
+				'url'	=> 'tcust.customer.index',
+				'param' => ['status' => 'actived', 'sort[name]' => 'asc'],
+				'scope'	=> 'tcust.setting.customer',
+			], [
+				'title'	=> 'Program',
+				'url'	=> 'tcust.program.index',
+				'param' => ['status' => 'published'],
+				'scope'	=> 'tcust.setting.program',
+			]],
+			'Laporan' => [[
+				'title'	=> 'Transaksi Pending',
+				'url'	=> 'tcust.laporan.log',
+				'param' => ['mode' => 'pending'],
+				'scope'	=> 'tcust.log.pending',
+			], [
+				'title'	=> 'Transaksi Verifikasi',
+				'url'	=> 'tcust.laporan.log',
+				'param' => ['mode' => 'verified'],
+				'scope'	=> 'tcust.log.verified',
+			]],
+		],
+		'PERSEDIAAN'	=> [
+			'Stok' 		=> [[
 				'title'	=> 'Masuk',
 				'url'	=> 'twh.document.index',
 				'param' => ['cause' => 'masuk', 'status' => 'drafted'],
@@ -100,15 +160,10 @@ return [
 				'param' => ['cause' => 'keluar', 'status' => 'drafted'],
 				'scope'	=> 'twh.document.keluar',
 			], [
-				'title'	=> 'Opname',
+				'title'	=> 'Inhouse',
 				'url'	=> 'twh.document.index',
-				'param' => ['cause' => 'opname', 'status' => 'drafted'],
-				'scope'	=> 'twh.document.opname',
-			], [
-				'title'	=> 'Konversi',
-				'url'	=> 'twh.document.index',
-				'param' => ['cause' => 'konversi', 'status' => 'drafted'],
-				'scope'	=> 'twh.document.konversi',
+				'param' => ['cause' => 'inhouse', 'status' => 'drafted'],
+				'scope'	=> 'twh.document.inhouse',
 			]],
 			'Pengaturan' => [[
 				'title'	=> 'Item',
@@ -132,10 +187,15 @@ return [
 				'param' => [],
 				'scope'	=> 'twh.laporan.stock',
 			], [
-				'title'	=> 'Statistik Stok',
-				'url'	=> 'twh.laporan.stat',
+				'title'	=> 'Rekomendasi Opname',
+				'url'	=> 'twh.laporan.opname',
 				'param' => [],
-				'scope'	=> 'twh.laporan.stat',
+				'scope'	=> 'twh.laporan.opname',
+			], [
+				'title'	=> 'Rekomendasi PO',
+				'url'	=> 'twh.laporan.procure',
+				'param' => [],
+				'scope'	=> 'twh.laporan.procure',
 			], [
 				'title'	=> 'Kepemilikan Stok',
 				'url'	=> 'twh.laporan.index',
@@ -201,15 +261,15 @@ return [
 				'param' => ['status' => 'actived'],
 				'scope'	=> 'tfin.setting.coa',
 			], [
-				'title'	=> 'Aset Berwujud',
+				'title'	=> 'Depresiasi',
 				'url'	=> 'tfin.asset.index',
-				'param' => ['type' => 'berwujud', 'status' => 'drafted'],
-				'scope'	=> 'tfin.asset.berwujud',
+				'param' => ['type' => 'depresiasi', 'status' => 'drafted'],
+				'scope'	=> 'tfin.asset.depresiasi',
 			], [
-				'title'	=> 'Aset Tidak Berwujud',
+				'title'	=> 'Amortisasi',
 				'url'	=> 'tfin.asset.index',
-				'param' => ['type' => 'tidak_berwujud', 'status' => 'drafted'],
-				'scope'	=> 'tfin.asset.tidak_berwujud',
+				'param' => ['type' => 'amortisasi', 'status' => 'drafted'],
+				'scope'	=> 'tfin.asset.amortisasi',
 			]],
 			'Laporan' 	=> [[
 				'title'	=> 'Buku Besar',
@@ -281,8 +341,9 @@ return [
 		'management'=> 'Manajemen', 
 		'tacl'		=> 'Akses', 
 		'tfin'		=> 'Keuangan', 
-		'twh'		=> 'Gudang', 
+		'twh'		=> 'Persediaan', 
 		'tsale'		=> 'Penjualan', 
+		'tproc'		=> 'Pembelian', 
 		'tsub'		=> 'Langganan',
 	],
 ];

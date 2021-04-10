@@ -4,11 +4,11 @@ return [
     'scopes'    => [
         'twh.document.masuk'    => 'Handle stok masuk',
         'twh.document.keluar'   => 'Handle stok keluar',
-        'twh.document.opname'   => 'Handle stok opname',
-        'twh.document.konversi' => 'Handle stok konversi',
+        'twh.document.inhouse'  => 'Handle stok inhouse',
         'twh.recipe.produksi'   => 'Handle konversi untuk produksi item',
         'twh.recipe.unpack'     => 'Handle konversi untuk unpack item',
-        'twh.laporan.stat'      => 'Melihat laporan statistik stok',
+        'twh.laporan.opname'    => 'Melihat laporan rekomendasi opname',
+        'twh.laporan.procure'   => 'Melihat laporan rekomendasi po',
         'twh.laporan.stock'     => 'Melihat laporan kartu stok',
         'twh.laporan.owner'     => 'Melihat laporan kepemilikan stok',
         'twh.timer.packing'     => 'Melihat laporan performace packer',
@@ -49,14 +49,7 @@ return [
                 'locked'    => 'Sudah Selesai',
                 'archived'  => 'Diarsipkan',
             ],
-            'konversi'    => [
-                'drafted'   => 'Inbox',
-                'stocked'   => 'Sudah Dikonversi',
-                'submitted' => 'Sudah Dicek',
-                'locked'    => 'Sudah Selesai',
-                'archived'  => 'Diarsipkan',
-            ],
-            'opname'        => [
+            'inhouse'       => [
                 'drafted'   => 'Inbox',
                 'stocked'   => 'Sudah Dicatat',
                 'submitted' => 'Sudah Dicek',
@@ -72,6 +65,7 @@ return [
             'LIFO'      => 'LIFO',
         ],
         'warehouse'     => [],
+        'item_url'      => '/api/warehouse/item/submitted',
     ],
     'color' => [
         'item'          => [
