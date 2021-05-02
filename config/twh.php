@@ -18,7 +18,7 @@ return [
         'twh.timer.packing'         => 'Melihat laporan performa packing',
         'twh.timer.unpacking'       => 'Melihat laporan performa unpacking',
         'twh.setting.item'          => 'Mengatur item',
-        'twh.document.submitted'=> 'Approval surat jalan',
+        'twh.document.approved'     => 'Approval surat jalan',
     ],
     'logo'      => 'https://thunderlab.id/storage/app/uploads/public/5f7/ae8/123/5f7ae81237a56599536208.png',
     'name'      => 'THUNDERLAB',
@@ -39,26 +39,27 @@ return [
         ],
         'document'  => [
             'masuk'     => [
-                'drafted'   => 'Inbox',
-                'stocked'   => 'Sudah Dibuka',
-                'submitted' => 'Sudah Dilabeli',
-                'locked'    => 'Sudah Selesai',
-                'archived'  => 'Diarsipkan',
+                'opened'    => 'Inbox',
+                'processed' => 'Dalam Proses',
+                'closed'    => 'Selesai',
+                'voided'    => 'Dibatalkan',
             ],
             'keluar'    => [
-                'drafted'   => 'Inbox',
-                'stocked'   => 'Sudah Disiapkan',
-                'submitted' => 'Sudah Dicek',
-                'locked'    => 'Sudah Selesai',
-                'archived'  => 'Diarsipkan',
+                'opened'    => 'Inbox',
+                'processed' => 'Dalam Proses',
+                'closed'    => 'Selesai',
+                'voided'    => 'Dibatalkan',
             ],
             'inhouse'   => [
-                'drafted'   => 'Inbox',
-                'stocked'   => 'Sudah Dicatat',
-                'submitted' => 'Sudah Dicek',
-                'locked'    => 'Sudah Selesai',
-                'archived'  => 'Diarsipkan',
+                'opened'    => 'Inbox',
+                'processed' => 'Dalam Proses',
+                'closed'    => 'Selesai',
+                'voided'    => 'Dibatalkan',
             ],
+        ],
+        'timer'     => [
+            'packing'   => 'Pengemasan',
+            'shipped'   => 'Pengiriman',
         ],
     ],
     'opsi'      => [
@@ -66,6 +67,29 @@ return [
             'FEFO'      => 'FEFO',
             'FIFO'      => 'FIFO',
             'LIFO'      => 'LIFO',
+        ],
+        'type'          => [
+            'masuk'     => [
+                'receiving'     => 'Receiving',
+                'restock_order' => 'Restock Order',
+                'sales_returned'=> 'Sales Returned',
+            ],
+            'keluar'    => [
+                'delivery_order'    => 'Delivery Order',
+                'store_requisition' => 'Store Requisition',
+                'procure_returned'  => 'Procure Returned',
+            ],
+            'inhouse'   => [
+                'opname'        => 'Opname',
+                'movement'      => 'Movement',
+            ],
+        ],
+        'step' => [
+            'processed'     => [
+                'approved'  => 'Persetujuan',
+                'stocked'   => 'Pencatatan',
+                'declined'  => 'Penolakan',
+            ],
         ],
         'note'          => [
             'spoiled'       => 'Basi',
@@ -77,6 +101,7 @@ return [
         ],
         'warehouse'     => [],
         'item_url'      => '/api/warehouse/item/submitted',
+        'material_url'  => '/api/manufacture/resource/submitted',
     ],
     'color'     => [
         'item'          => [
@@ -90,11 +115,10 @@ return [
             'archived'  => 'danger',
         ],
         'document'      => [
-            'drafted'   => 'warning',
-            'stocked'   => 'warning',
-            'submitted' => 'warning',
-            'locked'    => 'primary',
-            'archived'  => 'danger',
+            'opened'    => 'warning',
+            'processed' => 'warning',
+            'closed'    => 'primary',
+            'voided'    => 'danger',
         ],
     ],
     'default'   => [
