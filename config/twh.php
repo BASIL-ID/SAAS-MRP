@@ -58,6 +58,7 @@ return [
             ],
         ],
         'timer'     => [
+            'unpacking' => 'Sortir',
             'packing'   => 'Pengemasan',
             'shipped'   => 'Pengiriman',
         ],
@@ -76,6 +77,7 @@ return [
             ],
             'keluar'    => [
                 'delivery_order'    => 'Delivery Order',
+                'dispatch_note'     => 'Dispatch Note',
                 'store_requisition' => 'Store Requisition',
                 'procure_returned'  => 'Procure Returned',
             ],
