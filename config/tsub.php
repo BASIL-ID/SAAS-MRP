@@ -71,6 +71,8 @@ return [
             'TMTA01'        => 'Android Apps Team',
             //THUNDER, MANAGEMENT, CUSTOMER, ANDROID, 01
             'TMCA01'        => 'Android Apps Customer',
+            //THUNDER, MANAGEMENT, OWNER, ANDROID, 01
+            'TMOA01'        => 'Android Apps Owner',
         ],
     ],
     'color'     => [
