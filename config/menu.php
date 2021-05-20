@@ -35,6 +35,17 @@ return [
 				'param' => [],
 				'scope'	=> 'tsale.setting.pay',
 			]],
+			'Laporan' => [[
+				'title'	=> 'Sold',
+				'url'	=> 'tsale.report.index',
+				'param' => ['group' => 'sold'],
+				'scope'	=> 'tsale.report.sold',
+			], [
+				'title'	=> 'Settlement',
+				'url'	=> 'tsale.report.index',
+				'param' => ['group' => 'settlement'],
+				'scope'	=> 'tsale.report.settlement',
+			]],
 		],
 		'PERSEDIAAN'	=> [
 			'Dokumen'	=> [[

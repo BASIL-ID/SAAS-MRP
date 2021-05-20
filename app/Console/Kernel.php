@@ -12,10 +12,7 @@ class Kernel extends ConsoleKernel
      *
      * @var array
      */
-    protected $commands = [
-        Commands\CreateWebsite::class,
-        //
-    ];
+    protected $commands = [];
 
     /**
      * Define the application's command schedule.
@@ -23,9 +20,10 @@ class Kernel extends ConsoleKernel
      * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
      * @return void
      */
-    protected function schedule(Schedule $schedule)
-    {
-        // $schedule->command('inspire')->hourly();
+    protected function schedule(Schedule $schedule) {
+        $schedule->command('queue:work --queue:high --stop-when-empty')->everyFiveMinutes();
+        $schedule->command('queue:work --queue:low --stop-when-empty')->hourly();
+        $schedule->command('queue:work --queue:cutoff --stop-when-empty')->dailyAt('23:59');
     }
 
     /**
