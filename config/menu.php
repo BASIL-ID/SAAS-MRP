@@ -41,6 +41,11 @@ return [
 				'param' => ['group' => 'sold'],
 				'scope'	=> 'tsale.report.sold',
 			], [
+				'title'	=> 'Promo',
+				'url'	=> 'tsale.report.index',
+				'param' => ['group' => 'promo'],
+				'scope'	=> 'tsale.report.promo',
+			], [
 				'title'	=> 'Settlement',
 				'url'	=> 'tsale.report.index',
 				'param' => ['group' => 'settlement'],

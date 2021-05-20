@@ -13,6 +13,7 @@ return [
         'tsale.transaction.voided'      => 'Approval void transaksi',
         'tsale.report.settlement'       => 'Melihat laporan settlement',
         'tsale.report.sold'             => 'Melihat laporan produk terlaris',
+        'tsale.report.promo'            => 'Melihat laporan promo terlaris',
     ],
     'logo'      => 'https://thunderlab.id/storage/app/uploads/public/5f7/ae8/123/5f7ae81237a56599536208.png',
     'name'      => 'THUNDERLAB',
