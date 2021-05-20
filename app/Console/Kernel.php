@@ -21,9 +21,9 @@ class Kernel extends ConsoleKernel
      * @return void
      */
     protected function schedule(Schedule $schedule) {
-        $schedule->command('queue:work --queue:high --stop-when-empty')->everyFiveMinutes();
-        $schedule->command('queue:work --queue:low --stop-when-empty')->hourly();
-        $schedule->command('queue:work --queue:cutoff --stop-when-empty')->dailyAt('23:59');
+        $schedule->command('queue:work --queue=high --stop-when-empty')->everyFiveMinutes();
+        $schedule->command('queue:work --queue=low --stop-when-empty')->hourly();
+        $schedule->command('queue:work --queue=cutoff --stop-when-empty')->dailyAt('23:59');
     }
 
     /**

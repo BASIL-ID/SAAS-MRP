@@ -36,10 +36,10 @@ return [
 
         'database' => [
             'driver' => 'database',
+            'connection' => 'system',
             'table' => 'jobs',
             'queue' => 'default',
             'retry_after' => 90,
-            'connection'  => 'system',
         ],
 
         'beanstalkd' => [
