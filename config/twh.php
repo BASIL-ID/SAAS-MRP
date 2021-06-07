@@ -62,6 +62,7 @@ return [
             'type'      => [
                 'putaway'   => 'Putaway',
                 'dispatch'  => 'Dispatch',
+                'adjustment'=> 'Adjustment',
                 'movement'  => 'Movement',
                 'dispose'   => 'Dispose',
                 'cutoff'    => 'Cutoff',
