@@ -3,7 +3,7 @@
 return [
     'scopes'    => [
         'tsale.transaction.penjualan'   => 'Handle transaksi penjualan',
-        'tsale.transaction.read'        => 'Read transaksi penjualan',
+        'tsale.transaction.read'        => 'Baca transaksi penjualan',
         'tsale.promo.transaction'       => 'Mengatur promo transaksi',
         'tsale.promo.catalog'           => 'Mengatur promo produk',
         'tsale.catalog.setting'         => 'Mengatur katalog',
