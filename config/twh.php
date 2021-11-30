@@ -3,8 +3,11 @@
 return [
     'scopes'    => [
         'twh.task.index'            => 'Handle Task',
+        'twh.task.read'             => 'Read Task',
         'twh.document.index'        => 'Handle Dokumen',
+        'twh.document.read'         => 'Read Dokumen',
         'twh.record.index'          => 'Handle Paket',
+        'twh.record.read'           => 'Read Paket',
         // 'twh.conversion.repack'     => 'Handle konversi untuk repack item',
         // 'twh.conversion.unpack'     => 'Handle konversi untuk unpack item',
         'twh.setting.item'          => 'Mengatur item',
