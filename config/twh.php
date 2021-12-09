@@ -8,6 +8,7 @@ return [
         'twh.document.read'         => 'Baca Dokumen',
         'twh.record.index'          => 'Handle Paket',
         'twh.record.read'           => 'Baca Paket',
+        'twh.report.stock'          => 'Baca Kartu Stok',
         // 'twh.conversion.repack'     => 'Handle konversi untuk repack item',
         // 'twh.conversion.unpack'     => 'Handle konversi untuk unpack item',
         'twh.setting.item'          => 'Mengatur item',
